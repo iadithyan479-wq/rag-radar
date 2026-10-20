@@ -23,5 +23,4 @@ def load_markdown(directory):
         for i,line in enumerate(path.read_text().splitlines(),1):
             if line.strip(): out.append(Passage(path.name,i,line.strip()))
     return out
-def citation_context(results): return '
-'.join(f'[{p.source}:{p.line}] {p.text}' for p in results)
+def citation_context(results): return '\n'.join(f'[{p.source}:{p.line}] {p.text}' for p in results)
